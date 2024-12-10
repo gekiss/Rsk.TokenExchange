@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using FluentAssertions;
 using Microsoft.IdentityModel.JsonWebTokens;
 using Moq;
-using Newtonsoft.Json;
 using Rsk.TokenExchange.Exceptions;
 using Xunit;
 
@@ -114,8 +113,12 @@ namespace Rsk.TokenExchange.Tests.Parsers
             var actor = parsedClaims.FirstOrDefault(x => x.Type == "act");
             actor.Should().NotBeNull();
             actor?.ValueType.Should().Be(JsonClaimValueTypes.Json);
-            
-            var parsedActor = JsonConvert.DeserializeObject<Actor>(actor?.Value);
+
+#if NET5_0_OR_GREATER
+            var parsedActor = System.Text.Json.JsonSerializer.Deserialize<Actor>(actor?.Value);
+#else
+            var parsedActor = Newtonsoft.Json.JsonConvert.DeserializeObject<Actor>(actor?.Value);
+#endif
             parsedActor.ClientId.Should().Be(actorClientId);
             parsedActor.InnerActor.Should().BeNull();
         }
@@ -141,8 +144,12 @@ namespace Rsk.TokenExchange.Tests.Parsers
             var actor = parsedClaims.FirstOrDefault(x => x.Type == "act");
             actor.Should().NotBeNull();
             actor?.ValueType.Should().Be(JsonClaimValueTypes.Json);
-            
-            var parsedActor = JsonConvert.DeserializeObject<Actor>(actor?.Value);
+
+#if NET5_0_OR_GREATER
+            var parsedActor = System.Text.Json.JsonSerializer.Deserialize<Actor>(actor?.Value);
+#else
+            var parsedActor = Newtonsoft.Json.JsonConvert.DeserializeObject<Actor>(actor?.Value);
+#endif            
             parsedActor.ClientId.Should().Be(actorClientId);
             parsedActor.InnerActor.Should().Be(innerActor);
         }

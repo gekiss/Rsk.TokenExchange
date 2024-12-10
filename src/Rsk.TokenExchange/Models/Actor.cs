@@ -1,4 +1,9 @@
-using Newtonsoft.Json;
+
+#if NET5_0_OR_GREATER
+using JsonProperty = System.Text.Json.Serialization.JsonPropertyNameAttribute;
+#else
+using JsonProperty = Newtonsoft.Json.JsonPropertyAttribute;
+#endif
 
 namespace Rsk.TokenExchange
 {
