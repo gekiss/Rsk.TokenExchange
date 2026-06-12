@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Authors>ABC software</Authors>
+    <Company>ABC software.</Company>
+    <Copyright>Copyright 2021 © Rock Solid Knowledge Ltd. All rights reserved. Portion Copyright © 2026 ABC software.</Copyright>
+
+    <PackageProjectUrl>https://github.com/gekiss/Rsk.TokenExchange</PackageProjectUrl>
+    <PackageReleaseNotes>https://github.com/gekiss/Rsk.TokenExchange</PackageReleaseNotes>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageTags>IdentityServer OAuth Token Exchange</PackageTags>
+
+  </PropertyGroup>
+</Project>

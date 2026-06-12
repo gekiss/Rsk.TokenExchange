@@ -2,16 +2,8 @@
 
     <PropertyGroup>
         <TargetFrameworks>net8.0</TargetFrameworks>
-        <Authors>Rock Solid Knowledge Ltd</Authors>
+        <PackageId>Abc.TokenExchange.IdentityServer4</PackageId>
         <Description>Token Exchange (RFC 8693) implementation for IdentityServer4.</Description>
-        <PackageProjectUrl>https://github.com/RockSolidKnowledge/TokenExchange</PackageProjectUrl>
-        <PackageReleaseNotes>https://github.com/RockSolidKnowledge/TokenExchange/releases</PackageReleaseNotes>
-        <Copyright>Copyright 2021 (c) Rock Solid Knowledge Ltd. All rights reserved.</Copyright>
-        <PackageTags>IdentityServer OAuth Token Exchange IdentityServer4</PackageTags>
-        <IncludeSymbols>true</IncludeSymbols>
-        <PackageIcon>icon.png</PackageIcon>
-        <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-        <GenerateDocumentationFile>true</GenerateDocumentationFile>
     </PropertyGroup>
 
     <ItemGroup Condition=" '$(TargetFramework)' == 'net8.0' ">
