@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFrameworks>net8.0</TargetFrameworks>
@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net8.0' ">
-    <PackageReference Include="IdentityServer4" Version="4.2.0-preveiw.0" />
+    <PackageReference Include="Abc.IdentityServer4" Version="4.2.0-preview.1" />
   </ItemGroup>
 
   <ItemGroup>
