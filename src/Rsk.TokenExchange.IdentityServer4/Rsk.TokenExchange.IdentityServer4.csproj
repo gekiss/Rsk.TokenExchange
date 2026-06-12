@@ -1,21 +1,22 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup>
-        <TargetFrameworks>net8.0</TargetFrameworks>
-        <PackageId>Abc.TokenExchange.IdentityServer4</PackageId>
-        <Description>Token Exchange (RFC 8693) implementation for IdentityServer4.</Description>
-    </PropertyGroup>
+  <PropertyGroup>
+    <TargetFrameworks>net8.0</TargetFrameworks>
+    <PackageId>Abc.TokenExchange.IdentityServer4</PackageId>
+    <Description>Token Exchange (RFC 8693) implementation for IdentityServer4.</Description>
+  </PropertyGroup>
 
-    <ItemGroup Condition=" '$(TargetFramework)' == 'net8.0' ">
-      <PackageReference Include="IdentityServer4" Version="4.2.0-preveiw.0" />
-    </ItemGroup>
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net8.0' ">
+    <PackageReference Include="IdentityServer4" Version="4.2.0-preveiw.0" />
+  </ItemGroup>
 
-    <ItemGroup>
-      <ProjectReference Include="..\Rsk.TokenExchange\Rsk.TokenExchange.csproj" />
-    </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Rsk.TokenExchange\Rsk.TokenExchange.csproj" />
+  </ItemGroup>
 
-    <ItemGroup>
-        <None Include="..\..\icon.png" Pack="true" PackagePath="icon.png" />
-    </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\icon.png" Pack="true" PackagePath="icon.png" />
+    <None Include="..\..\README.md" Pack="true" PackagePath="README.md" />
+  </ItemGroup>
 
 </Project>
