@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using FluentAssertions;
+using AwesomeAssertions;
 using IdentityServer4.Models;
 using IdentityServer4.Validation;
 using Microsoft.Extensions.DependencyInjection;
