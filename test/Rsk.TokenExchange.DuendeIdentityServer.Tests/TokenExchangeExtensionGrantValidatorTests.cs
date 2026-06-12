@@ -83,7 +83,7 @@ namespace Rsk.TokenExchange.Tests.IdentityServer
         }
 
         [Fact]
-        public void ValidateAsync_WhenContextIsNull_ExpectArgumentNullException()
+        public Task ValidateAsync_WhenContextIsNull_ExpectArgumentNullException()
             => Assert.ThrowsAsync<ArgumentNullException>(() => CreateMockedSut().Object.ValidateAsync(null));
 
         [Fact]

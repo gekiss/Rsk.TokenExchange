@@ -48,6 +48,8 @@ namespace Rsk.TokenExchange.DuendeIdentityServer
         /// <inheritdoc />
         public async Task ValidateAsync(ExtensionGrantValidationContext context)
         {
+            ArgumentNullException.ThrowIfNull(context);
+
             // warn on no client auth
             if (context.Request.Secret == null) logger.LogInformation("Recieved unauthenticated token exchange request");
 
