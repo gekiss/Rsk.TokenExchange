@@ -5,7 +5,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Duende.IdentityServer.Models;
 using Duende.IdentityServer.Validation;
-using IdentityModel;
+using Duende.IdentityModel;
 using Microsoft.Extensions.Logging;
 using Rsk.TokenExchange.Exceptions;
 using Rsk.TokenExchange.Validators;
