@@ -16,7 +16,7 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
-    - name: Checkout
+    - name: Checkout code
       uses: actions/checkout@v4
       with:
         fetch-depth: 0
@@ -37,12 +37,13 @@ jobs:
       run: dotnet build --no-restore --configuration Release
     - name: Test
       run: dotnet test --no-build --verbosity normal --configuration Release
-    - name: Pack
+    - name: Pack NuGet package
       if: matrix.os == 'ubuntu-latest'
       run: dotnet pack --configuration Release
-    - name: upload artifact
+    - name: Publish to NuGet.org
       if: matrix.os == 'ubuntu-latest'
-      uses: actions/upload-artifact@v4
-      with:
-        name: nupkg
-        path: '**/*.nupkg'
+      run: |
+        dotnet nuget push "./nupkgs/*.nupkg" \
+          --api-key ${{ secrets.NUGET_API_KEY }} \
+          --source https://api.nuget.org/v3/index.json \
+          --skip-duplicate
